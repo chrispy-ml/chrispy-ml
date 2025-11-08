@@ -87,6 +87,11 @@ I believe in **resilience**, **continuous growth**, and **solving problems that 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/christopher-hurtado)
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/chrispyml)
 
+## 🧮 LeetCode
+
+[![LeetCode](https://img.shields.io/badge/LeetCode-chrispyml-FFA116?style=for-the-badge&logo=leetcode&logoColor=white)](https://leetcode.com/chrispyml)
+
+Solving problems daily | Building algorithm skills | Python focus
 ---
 
 ⭐️ From [chrispy-ml](https://github.com/chrispy-ml) | Building in public, one commit at a time 🚀
