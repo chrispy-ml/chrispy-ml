@@ -1,43 +1,42 @@
-// Mobile navigation
-const menuToggle = document.getElementById('menuToggle');
-const mobileNav  = document.getElementById('mobileNav');
+// Mobile menu
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mainNav       = document.getElementById('mainNav');
+const header        = document.querySelector('.header');
 
-menuToggle.addEventListener('click', () => {
-  const isOpen = mobileNav.classList.toggle('is-open');
-  menuToggle.classList.toggle('is-open', isOpen);
-  menuToggle.setAttribute('aria-expanded', String(isOpen));
-  menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+mobileMenuBtn.addEventListener('click', () => {
+  const isOpen = header.classList.toggle('mobile-nav-open');
+  mobileMenuBtn.classList.toggle('is-open', isOpen);
+  mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+  mobileMenuBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
 });
 
-mobileNav.querySelectorAll('a').forEach(link => {
+mainNav.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
-    mobileNav.classList.remove('is-open');
-    menuToggle.classList.remove('is-open');
-    menuToggle.setAttribute('aria-expanded', 'false');
-    menuToggle.setAttribute('aria-label', 'Open navigation menu');
+    header.classList.remove('mobile-nav-open');
+    mobileMenuBtn.classList.remove('is-open');
+    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    mobileMenuBtn.setAttribute('aria-label', 'Open menu');
   });
 });
 
 // Header scroll opacity
-const header = document.querySelector('.site-header');
-
 window.addEventListener('scroll', () => {
-  header.style.backgroundColor = window.scrollY > 60
-    ? 'rgba(10, 9, 8, 0.98)'
-    : 'rgba(10, 9, 8, 0.92)';
+  header.style.background = window.scrollY > 60
+    ? 'rgba(10, 10, 10, 0.96)'
+    : '';
 }, { passive: true });
 
 // Newsletter form
-const form        = document.getElementById('newsletterForm');
-const formMessage = document.getElementById('formMessage');
+const newsletterForm = document.getElementById('newsletterForm');
+const formMessage    = document.getElementById('formMessage');
 
-form.addEventListener('submit', e => {
+newsletterForm.addEventListener('submit', e => {
   e.preventDefault();
-  const email = form.email.value.trim();
-  if (!email) return;
+  const input = newsletterForm.querySelector('input[type="email"]');
+  if (!input.value.trim()) return;
 
   formMessage.textContent = 'Thank you. You will hear from us soon.';
-  form.reset();
+  input.value = '';
 
   setTimeout(() => { formMessage.textContent = ''; }, 5000);
 });
