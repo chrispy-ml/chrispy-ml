@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="VANTARA Parfums — luxury fragrance crafted with presence, emotion, and restraint."
+  />
+  <title>VANTARA Parfums</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#" class="logo">VANTARA</a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobileNav"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#collections">Collections</a></li>
+          <li><a href="#philosophy">Philosophy</a></li>
+          <li><a href="#featured">Featured</a></li>
+          <li><a href="#journal">Journal</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <ul>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#featured">Featured</a></li>
+        <li><a href="#journal">Journal</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Presence Over Volume</p>
+          <h1 class="hero-title">
+            Fragrance with gravity, restraint, and identity.
+          </h1>
+          <p class="hero-text">
+            VANTARA Parfums creates modern luxury scent for those who do not
+            need noise to command attention. Dark elegance. Refined aura.
+            Lasting impression.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#collections" class="btn btn-primary">Explore the House</a>
+            <a href="#featured" class="btn btn-secondary">View Featured Fragrances</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image-wrap">
+            <img
+              src="images/hero-bottle.jpg"
+              alt="VANTARA Parfums hero bottle"
+              class="hero-image"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collections -->
+    <section class="section" id="collections">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">The House</p>
+          <h2>Collections</h2>
+          <p class="section-intro">
+            Built across emotional, elemental, and ritual dimensions of scent.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card collection-card">
+            <div class="card-accent"></div>
+            <h3>Core Collection</h3>
+            <p>
+              Signature VANTARA compositions designed to define the house's
+              identity through wearability, depth, and presence.
+            </p>
+            <a href="#" class="text-link">Discover Core</a>
+          </article>
+
+          <article class="card collection-card">
+            <div class="card-accent"></div>
+            <h3>Elemental Collection</h3>
+            <p>
+              Mineral, shadow, ember, air, and skin translated into
+              atmospheric structures with modern luxury tension.
+            </p>
+            <a href="#" class="text-link">Explore Elemental</a>
+          </article>
+
+          <article class="card collection-card">
+            <div class="card-accent"></div>
+            <h3>ÆTHERMORTIS</h3>
+            <p>
+              VANTARA's ultra-niche line — conceptual, haunting, and built
+              for emotional impact beyond convention.
+            </p>
+            <a href="#" class="text-link">Enter ÆTHERMORTIS</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="section section-alt" id="philosophy">
+      <div class="container split-layout">
+        <div class="split-copy">
+          <p class="eyebrow">Brand Philosophy</p>
+          <h2>Luxury is control.</h2>
+          <p>
+            VANTARA does not chase loudness for its own sake. The house is built
+            on the idea that true luxury is disciplined — in composition,
+            projection, presentation, and memory.
+          </p>
+          <p>
+            Every fragrance is designed to leave an impression that feels
+            intentional rather than excessive. Presence, not clutter.
+          </p>
+          <a href="#" class="btn btn-secondary">Read the Story</a>
+        </div>
+
+        <div class="quote-panel">
+          <p class="quote-mark">"</p>
+          <p class="quote-text">
+            A great fragrance should feel like architecture around the skin.
+          </p>
+          <p class="quote-credit">— VANTARA Parfums</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured fragrances -->
+    <section class="section" id="featured">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Featured Fragrances</p>
+          <h2>Signature compositions</h2>
+          <p class="section-intro">
+            Built to define mood, identity, and atmosphere.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="product-card">
+            <div class="product-image-wrap">
+              <img
+                src="images/fragrance-1.jpg"
+                alt="Dominus fragrance bottle"
+                class="product-image"
+              />
+            </div>
+            <div class="product-body">
+              <p class="product-category">Founder Signature</p>
+              <h3>Dominus</h3>
+              <p class="product-description">
+                Commanding amber woods, smoke, refined spice, and structure.
+              </p>
+              <div class="product-meta">
+                <span>Extrait</span>
+                <span>50 ml</span>
+              </div>
+              <a href="#" class="btn btn-primary btn-block">View Fragrance</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image-wrap">
+              <img
+                src="images/fragrance-2.jpg"
+                alt="Veléa fragrance bottle"
+                class="product-image"
+              />
+            </div>
+            <div class="product-body">
+              <p class="product-category">Core Collection</p>
+              <h3>Veléa</h3>
+              <p class="product-description">
+                Soft radiance, refined skin, airy florals, and polished depth.
+              </p>
+              <div class="product-meta">
+                <span>Eau de Parfum</span>
+                <span>50 ml</span>
+              </div>
+              <a href="#" class="btn btn-primary btn-block">View Fragrance</a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image-wrap">
+              <img
+                src="images/fragrance-3.jpg"
+                alt="Velum Noctis fragrance bottle"
+                class="product-image"
+              />
+            </div>
+            <div class="product-body">
+              <p class="product-category">Elemental Collection</p>
+              <h3>Velum Noctis</h3>
+              <p class="product-description">
+                Shadowed veil, soft mineral textures, and nocturnal atmosphere.
+              </p>
+              <div class="product-meta">
+                <span>Extrait</span>
+                <span>50 ml</span>
+              </div>
+              <a href="#" class="btn btn-primary btn-block">View Fragrance</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founder / About teaser -->
+    <section class="section section-alt">
+      <div class="container founder-grid">
+        <div class="founder-image-wrap">
+          <img
+            src="images/founder.jpg"
+            alt="Founder portrait"
+            class="founder-image"
+          />
+        </div>
+
+        <div class="founder-copy">
+          <p class="eyebrow">The Founder</p>
+          <h2>Built with vision and discipline.</h2>
+          <p>
+            VANTARA was conceived as more than a fragrance label. It is a house
+            built around emotional architecture, luxury restraint, and a deeper
+            philosophy of identity through scent.
+          </p>
+          <p>
+            Each composition is designed not only to smell excellent, but to
+            create an atmosphere around the wearer.
+          </p>
+          <a href="#" class="btn btn-secondary">About the Founder</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journal / editorial -->
+    <section class="section" id="journal">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Journal</p>
+          <h2>Editorial and ritual</h2>
+          <p class="section-intro">
+            Notes on scent, identity, performance, and craftsmanship.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card article-card">
+            <p class="article-tag">Journal</p>
+            <h3>Why presence matters more than loud projection</h3>
+            <p>
+              A deeper look at the difference between scent that shouts and
+              scent that remains unforgettable.
+            </p>
+            <a href="#" class="text-link">Read Article</a>
+          </article>
+
+          <article class="card article-card">
+            <p class="article-tag">Craft</p>
+            <h3>The architecture of dark luxury fragrance</h3>
+            <p>
+              How contrast, texture, and restraint create a more powerful scent
+              identity.
+            </p>
+            <a href="#" class="text-link">Read Article</a>
+          </article>
+
+          <article class="card article-card">
+            <p class="article-tag">Ritual</p>
+            <h3>Layering systems for aura and longevity</h3>
+            <p>
+              Spray, oil, atmosphere, and skin preparation as one complete
+              luxury ritual.
+            </p>
+            <a href="#" class="text-link">Read Article</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter / Contact CTA -->
+    <section class="section section-cta" id="contact">
+      <div class="container cta-panel">
+        <div>
+          <p class="eyebrow">Stay Close</p>
+          <h2>Join the VANTARA mailing list</h2>
+          <p class="section-intro">
+            Receive launch updates, editorial notes, and first access to new
+            releases.
+          </p>
+        </div>
+
+        <form class="newsletter-form" id="newsletterForm" novalidate>
+          <label for="email" class="sr-only">Email address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+            autocomplete="email"
+          />
+          <button type="submit" class="btn btn-primary">Join</button>
+        </form>
+
+        <p class="form-message" id="formMessage" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-logo">VANTARA</p>
+        <p class="footer-copy">
+          Modern luxury fragrance built on presence, emotion, and restraint.
+        </p>
+      </div>
+
+      <div>
+        <p class="footer-heading">Navigate</p>
+        <ul class="footer-links">
+          <li><a href="#collections">Collections</a></li>
+          <li><a href="#featured">Featured</a></li>
+          <li><a href="#philosophy">Philosophy</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-heading">Contact</p>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@vantaraparfums.com">hello@vantaraparfums.com</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Wholesale Inquiries</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 VANTARA Parfums. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
