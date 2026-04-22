@@ -1,32 +1,48 @@
-// Mobile menu
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const mainNav       = document.getElementById('mainNav');
-const header        = document.querySelector('.header');
+// ─── Header scroll state ────────────────────────────────────
+const siteHeader = document.getElementById('siteHeader');
 
-mobileMenuBtn.addEventListener('click', () => {
-  const isOpen = header.classList.toggle('mobile-nav-open');
-  mobileMenuBtn.classList.toggle('is-open', isOpen);
-  mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
-  mobileMenuBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+window.addEventListener('scroll', () => {
+  siteHeader.classList.toggle('is-scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// ─── Mobile full-screen menu ─────────────────────────────────
+const burgerBtn  = document.getElementById('burgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+burgerBtn.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('is-open');
+  burgerBtn.classList.toggle('is-open', isOpen);
+  burgerBtn.setAttribute('aria-expanded', String(isOpen));
+  mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+  document.body.style.overflow = isOpen ? 'hidden' : '';
 });
 
-mainNav.querySelectorAll('a').forEach(link => {
+mobileMenu.querySelectorAll('.mobile-link').forEach(link => {
   link.addEventListener('click', () => {
-    header.classList.remove('mobile-nav-open');
-    mobileMenuBtn.classList.remove('is-open');
-    mobileMenuBtn.setAttribute('aria-expanded', 'false');
-    mobileMenuBtn.setAttribute('aria-label', 'Open menu');
+    mobileMenu.classList.remove('is-open');
+    burgerBtn.classList.remove('is-open');
+    burgerBtn.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
   });
 });
 
-// Header scroll opacity
-window.addEventListener('scroll', () => {
-  header.style.background = window.scrollY > 60
-    ? 'rgba(10, 10, 10, 0.96)'
-    : '';
-}, { passive: true });
+// ─── Scroll reveal (Intersection Observer) ───────────────────
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.08,
+  rootMargin: '0px 0px -40px 0px',
+});
 
-// Newsletter form — posts to Django subscribe endpoint
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ─── Newsletter form → Django /subscribe/ endpoint ───────────
 const newsletterForm = document.getElementById('newsletterForm');
 const formMessage    = document.getElementById('formMessage');
 
@@ -50,16 +66,15 @@ newsletterForm.addEventListener('submit', async e => {
 
     const data = await res.json();
     formMessage.textContent = data.message;
-    formMessage.style.color = data.ok ? '' : '#e57373';
-
+    formMessage.style.color = data.ok ? '' : '#c47a7a';
     if (data.ok) newsletterForm.reset();
   } catch {
     formMessage.textContent = 'Something went wrong. Please try again.';
-    formMessage.style.color = '#e57373';
+    formMessage.style.color = '#c47a7a';
   }
 
   setTimeout(() => {
     formMessage.textContent = '';
     formMessage.style.color = '';
-  }, 5000);
+  }, 6000);
 });

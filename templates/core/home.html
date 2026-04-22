@@ -4,319 +4,377 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="VANTARA Parfums — luxury fragrance crafted with presence, emotion, and restraint."
-  />
+  <meta name="description" content="VANTARA Parfums — luxury fragrance crafted with presence, emotion, and restraint." />
   <title>VANTARA Parfums</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500&display=swap"
     rel="stylesheet"
   />
 
   <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 </head>
 <body>
-  <div class="site-glow site-glow-1"></div>
-  <div class="site-glow site-glow-2"></div>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container nav-container">
-      <a href="#" class="logo">VANTARA</a>
+  <!-- ============================================================
+       HEADER — split centered-logo nav (Byredo / LV pattern)
+  ============================================================ -->
+  <header class="header" id="siteHeader">
+    <div class="header-inner">
 
-      <nav class="nav" id="mainNav" aria-label="Main navigation">
+      <nav class="nav nav--left" aria-label="Site navigation left">
         <a href="#fragrances">Fragrances</a>
         <a href="#philosophy">Philosophy</a>
         <a href="#collections">Collections</a>
-        <a href="#story">Story</a>
-        <a href="#contact">Contact</a>
       </nav>
 
-      <a href="#contact" class="btn btn-secondary nav-cta">Enter the House</a>
+      <a href="#" class="logo" aria-label="VANTARA Parfums home">VANTARA</a>
 
-      <button
-        class="mobile-menu-btn"
-        id="mobileMenuBtn"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="mainNav"
-      >
-        <span></span>
-        <span></span>
-      </button>
+      <div class="header-end">
+        <nav class="nav nav--right" aria-label="Site navigation right">
+          <a href="#story">Story</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a href="#contact" class="header-cta">Enter the House</a>
+
+        <button
+          class="burger"
+          id="burgerBtn"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <p class="eyebrow">Presence Over Volume</p>
-        <h1 class="hero-title">
-          Luxury fragrance shaped by shadow, restraint, and identity.
+  <!-- Mobile full-screen menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <nav class="mobile-nav">
+        <a href="#fragrances" class="mobile-link">Fragrances</a>
+        <a href="#philosophy" class="mobile-link">Philosophy</a>
+        <a href="#collections" class="mobile-link">Collections</a>
+        <a href="#story"       class="mobile-link">Story</a>
+        <a href="#contact"     class="mobile-link">Contact</a>
+      </nav>
+      <a href="#contact" class="btn btn--outline mobile-cta">Enter the House</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         HERO — full viewport, centered editorial title
+    ============================================================ -->
+    <section class="hero" id="top">
+      <div class="hero-inner">
+
+        <div class="hero-eyebrow reveal">
+          <span class="eyebrow-rule"></span>
+          <span class="eyebrow-text">Presence Over Volume</span>
+          <span class="eyebrow-rule"></span>
+        </div>
+
+        <h1 class="hero-title reveal">
+          Luxury fragrance<br>
+          shaped by shadow,<br>
+          restraint, and identity.
         </h1>
-        <p class="hero-text">
-          VANTARA Parfums is a modern fragrance house built around atmosphere,
-          control, emotional tension, and unforgettable trail. Every composition
-          is designed to feel intentional, elevated, and deeply personal.
+
+        <p class="hero-sub reveal">
+          VANTARA Parfums — A modern fragrance house built around atmosphere,
+          control, emotional tension, and unforgettable trail.
         </p>
 
-        <div class="hero-actions">
-          <a href="#fragrances" class="btn btn-primary">Explore Fragrances</a>
-          <a href="#story" class="btn btn-ghost">Discover the House</a>
+        <div class="hero-actions reveal">
+          <a href="#fragrances" class="btn btn--filled">Explore Fragrances</a>
+          <a href="#story"      class="btn btn--outline">Discover the House</a>
         </div>
 
-        <div class="hero-metrics">
-          <div class="metric">
-            <span class="metric-number">01</span>
-            <span class="metric-label">House identity first</span>
-          </div>
-          <div class="metric">
-            <span class="metric-number">02</span>
-            <span class="metric-label">Luxury with restraint</span>
-          </div>
-          <div class="metric">
-            <span class="metric-number">03</span>
-            <span class="metric-label">Built for presence</span>
-          </div>
-        </div>
       </div>
 
-      <div class="hero-visual">
-        <div class="bottle-stage">
-          <div class="bottle-card">
-            <div class="bottle-shine"></div>
-            <div class="bottle-label">VANTARA</div>
-            <div class="bottle-name">SYRÆN</div>
-            <div class="bottle-subtext">Extrait de Parfum</div>
-          </div>
-          <div class="floating-note note-top">Shadow</div>
-          <div class="floating-note note-right">Velvet Smoke</div>
-          <div class="floating-note note-bottom">Plum Skin</div>
-        </div>
+      <div class="scroll-indicator" aria-hidden="true">
+        <span class="scroll-line"></span>
+        <span class="scroll-label">Scroll</span>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Featured Fragrances -->
-  <section id="fragrances" class="section section-elevated">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">Featured Fragrances</p>
-        <h2 class="section-title">A signature built to leave an impression</h2>
-        <p class="section-text">
-          Discover expressions of power, darkness, elegance, and emotional depth—
-          each created with a clear role, a distinct aura, and a precise identity.
-        </p>
-      </div>
+    <!-- ============================================================
+         FRAGRANCES — border-grid editorial layout (Initio / Byredo)
+    ============================================================ -->
+    <section id="fragrances" class="section">
+      <div class="container">
 
-      <div class="card-grid three-col">
-        {% if featured_fragrances %}
-          {% for fragrance in featured_fragrances %}
-            <article class="product-card {% if forloop.counter == 2 %}product-card-featured{% endif %}">
-              <div class="product-topline">{{ fragrance.get_collection_display }}</div>
-              <h3>{{ fragrance.name }}</h3>
-              <p>{{ fragrance.description }}</p>
-              <div class="product-meta">
-                <span>{{ fragrance.note_1 }}</span>
-                <span>{{ fragrance.note_2 }}</span>
+        <header class="section-head reveal">
+          <span class="label">Featured Fragrances</span>
+          <h2 class="section-title">
+            A signature built<br>to leave an impression
+          </h2>
+          <p class="section-lead">
+            Expressions of power, darkness, elegance, and emotional depth—each
+            built with a clear role and a precise identity.
+          </p>
+        </header>
+
+        <div class="fragrance-grid">
+
+          {% if featured_fragrances %}
+            {% for fragrance in featured_fragrances %}
+              <article class="fragrance-item reveal" style="transition-delay:{{ forloop.counter0 }}00ms">
+                <span class="fragrance-num">0{{ forloop.counter }}</span>
+                <span class="fragrance-coll">{{ fragrance.get_collection_display }}</span>
+                <h3 class="fragrance-name">{{ fragrance.name }}</h3>
+                <p class="fragrance-desc">{{ fragrance.description }}</p>
+                <div class="fragrance-tags">
+                  {% if fragrance.note_1 %}<span>{{ fragrance.note_1 }}</span>{% endif %}
+                  {% if fragrance.note_2 %}<span>{{ fragrance.note_2 }}</span>{% endif %}
+                </div>
+                <a href="#" class="text-link">View Fragrance</a>
+              </article>
+            {% endfor %}
+          {% else %}
+            <article class="fragrance-item reveal">
+              <span class="fragrance-num">01</span>
+              <span class="fragrance-coll">Founder Signature</span>
+              <h3 class="fragrance-name">Dominus</h3>
+              <p class="fragrance-desc">
+                Authority, warmth, and command. A fragrance built for presence
+                without noise.
+              </p>
+              <div class="fragrance-tags">
+                <span>Amber Woods</span><span>Commanding</span>
               </div>
+              <a href="#" class="text-link">View Fragrance</a>
             </article>
-          {% endfor %}
-        {% else %}
-          <article class="product-card">
-            <div class="product-topline">Founder Signature</div>
-            <h3>Dominus</h3>
-            <p>Authority, warmth, and command. A fragrance built for presence without noise.</p>
-            <div class="product-meta">
-              <span>Amber Woods</span>
-              <span>Commanding</span>
-            </div>
-          </article>
 
-          <article class="product-card product-card-featured">
-            <div class="product-topline">Ultra Niche</div>
-            <h3>SYRÆN</h3>
-            <p>Dark elegance in motion—seductive, sculpted, and emotionally magnetic.</p>
-            <div class="product-meta">
-              <span>Velvet Floral</span>
-              <span>Magnetic</span>
-            </div>
-          </article>
+            <article class="fragrance-item reveal" style="transition-delay:100ms">
+              <span class="fragrance-num">02</span>
+              <span class="fragrance-coll">Ultra Niche</span>
+              <h3 class="fragrance-name">SYRÆN</h3>
+              <p class="fragrance-desc">
+                Dark elegance in motion — seductive, sculpted, and emotionally
+                magnetic.
+              </p>
+              <div class="fragrance-tags">
+                <span>Velvet Floral</span><span>Magnetic</span>
+              </div>
+              <a href="#" class="text-link">View Fragrance</a>
+            </article>
 
-          <article class="product-card">
-            <div class="product-topline">Nocturnal Signature</div>
-            <h3>NOCTHYR</h3>
-            <p>Shadowed radiance with a lingering trail designed to stay in memory.</p>
-            <div class="product-meta">
-              <span>Dark Resin</span>
-              <span>Elegant</span>
-            </div>
-          </article>
-        {% endif %}
-      </div>
-    </div>
-  </section>
+            <article class="fragrance-item reveal" style="transition-delay:200ms">
+              <span class="fragrance-num">03</span>
+              <span class="fragrance-coll">Nocturnal Signature</span>
+              <h3 class="fragrance-name">NOCTHYR</h3>
+              <p class="fragrance-desc">
+                Shadowed radiance with a lingering trail designed to stay
+                in memory.
+              </p>
+              <div class="fragrance-tags">
+                <span>Dark Resin</span><span>Elegant</span>
+              </div>
+              <a href="#" class="text-link">View Fragrance</a>
+            </article>
+          {% endif %}
 
-  <!-- Philosophy -->
-  <section id="philosophy" class="section">
-    <div class="container split-grid">
-      <div>
-        <p class="eyebrow">The Philosophy</p>
-        <h2 class="section-title">Luxury should feel controlled, not loud.</h2>
-      </div>
-
-      <div class="philosophy-copy">
-        <p>
-          VANTARA is built on the belief that true luxury does not need to shout.
-          It commands attention through structure, quality, restraint, and atmosphere.
-        </p>
-        <p>
-          Our compositions are designed with modern tension: darkness against
-          light, softness against mineral edge, intimacy against projection.
-          The result is fragrance that feels cinematic, elevated, and unmistakably individual.
-        </p>
-
-        <div class="feature-list">
-          <div class="feature-item">
-            <span class="feature-line"></span>
-            <div>
-              <h4>Precision Composition</h4>
-              <p>Every formula is engineered for identity, texture, and wear.</p>
-            </div>
-          </div>
-          <div class="feature-item">
-            <span class="feature-line"></span>
-            <div>
-              <h4>Emotional Architecture</h4>
-              <p>Each release is meant to evoke a world, not just smell good.</p>
-            </div>
-          </div>
-          <div class="feature-item">
-            <span class="feature-line"></span>
-            <div>
-              <h4>Lasting Presence</h4>
-              <p>Performance is treated as part of the art, never an afterthought.</p>
-            </div>
-          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Collections -->
-  <section id="collections" class="section section-elevated">
-    <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">Collections</p>
-        <h2 class="section-title">Worlds within the house</h2>
-        <p class="section-text">
-          VANTARA collections are structured to express different emotional
-          territories—from signature luxury to darker experimental visions.
-        </p>
-      </div>
+    <!-- ============================================================
+         PHILOSOPHY — large italic pull-quote + pillar list
+    ============================================================ -->
+    <section id="philosophy" class="section section--dim">
+      <div class="container">
+        <div class="philosophy-grid">
 
-      <div class="collection-grid">
-        <article class="collection-card large">
-          <div class="collection-overlay"></div>
-          <div class="collection-content">
-            <p class="collection-label">Core Signature</p>
-            <h3>House Icons</h3>
-            <p>The defining releases of the brand—refined, wearable, and unforgettable.</p>
+          <div class="philo-left reveal">
+            <span class="label">The Philosophy</span>
+            <blockquote class="philo-quote">
+              "Luxury should feel<br>controlled, not loud."
+            </blockquote>
+            <cite class="philo-source">— VANTARA Parfums</cite>
           </div>
-        </article>
 
-        <article class="collection-card">
-          <div class="collection-overlay"></div>
-          <div class="collection-content">
-            <p class="collection-label">Ultra Niche</p>
-            <h3>ÆTHERMORTIS</h3>
-            <p>Experimental, darker, more abstract scent architecture.</p>
+          <div class="philo-right reveal" style="transition-delay:120ms">
+            <p class="philo-body">
+              VANTARA is built on the belief that true luxury does not need to
+              shout. It commands attention through structure, quality, restraint,
+              and atmosphere.
+            </p>
+            <p class="philo-body">
+              Our compositions are designed with modern tension: darkness against
+              light, softness against mineral edge, intimacy against projection.
+            </p>
+
+            <ul class="pillars">
+              <li class="pillar">
+                <span class="pillar-rule"></span>
+                <div>
+                  <h4>Precision Composition</h4>
+                  <p>Every formula is engineered for identity, texture, and wear.</p>
+                </div>
+              </li>
+              <li class="pillar">
+                <span class="pillar-rule"></span>
+                <div>
+                  <h4>Emotional Architecture</h4>
+                  <p>Each release is meant to evoke a world, not just smell good.</p>
+                </div>
+              </li>
+              <li class="pillar">
+                <span class="pillar-rule"></span>
+                <div>
+                  <h4>Lasting Presence</h4>
+                  <p>Performance is treated as part of the art, never an afterthought.</p>
+                </div>
+              </li>
+            </ul>
           </div>
-        </article>
 
-        <article class="collection-card">
-          <div class="collection-overlay"></div>
-          <div class="collection-content">
-            <p class="collection-label">Atmospheric</p>
-            <h3>Elemental</h3>
-            <p>Mineral, air, shadow, fire, and skin translated into structure.</p>
-          </div>
-        </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Story -->
-  <section id="story" class="section">
-    <div class="container story-grid">
-      <div class="story-panel">
-        <p class="eyebrow">House Story</p>
-        <h2 class="section-title">Built for those who want presence with identity.</h2>
-        <p>
-          VANTARA Parfums exists for people who want more than fragrance. They want
-          an aura. A signature. A feeling that lingers after they leave the room.
-        </p>
-        <p>
-          The house was created from a desire to merge modern luxury with atmosphere,
-          darkness, restraint, and personal power. Each release is meant to feel
-          deliberate—like a tailored silhouette in scent form.
-        </p>
+    <!-- ============================================================
+         COLLECTIONS — asymmetric editorial grid
+    ============================================================ -->
+    <section id="collections" class="section">
+      <div class="container">
+
+        <header class="section-head reveal">
+          <span class="label">Collections</span>
+          <h2 class="section-title">Worlds within the house</h2>
+        </header>
+
+        <div class="coll-grid">
+
+          <article class="coll-card coll-card--large reveal">
+            <div class="coll-card-body">
+              <span class="label">Core Signature</span>
+              <h3>House Icons</h3>
+              <p>
+                The defining releases of the brand — refined, wearable,
+                and unforgettable.
+              </p>
+              <a href="#" class="text-link">Explore</a>
+            </div>
+          </article>
+
+          <article class="coll-card reveal" style="transition-delay:100ms">
+            <div class="coll-card-body">
+              <span class="label">Ultra Niche</span>
+              <h3>ÆTHERMORTIS</h3>
+              <p>Experimental, darker, more abstract scent architecture.</p>
+              <a href="#" class="text-link">Explore</a>
+            </div>
+          </article>
+
+          <article class="coll-card reveal" style="transition-delay:200ms">
+            <div class="coll-card-body">
+              <span class="label">Atmospheric</span>
+              <h3>Elemental</h3>
+              <p>Mineral, air, shadow, fire, and skin translated into structure.</p>
+              <a href="#" class="text-link">Explore</a>
+            </div>
+          </article>
+
+        </div>
       </div>
+    </section>
 
-      <div class="quote-panel">
-        <p class="quote-mark">"</p>
-        <blockquote>
-          Fragrance should not just be worn. It should shape the air around you.
+    <!-- ============================================================
+         STORY — centered manifesto (Parfums de Marly / Byredo pattern)
+    ============================================================ -->
+    <section id="story" class="section section--dim section--centered">
+      <div class="container container--narrow">
+
+        <span class="label reveal">House Story</span>
+
+        <blockquote class="story-quote reveal">
+          "Fragrance should not<br>just be worn. It should<br>
+          shape the air around you."
         </blockquote>
-        <p class="quote-author">VANTARA Parfums</p>
+
+        <cite class="story-attr reveal">— VANTARA Parfums</cite>
+
+        <div class="story-body reveal">
+          <p>
+            VANTARA Parfums exists for people who want more than fragrance.
+            They want an aura. A signature. A feeling that lingers after they
+            leave the room.
+          </p>
+          <p>
+            The house was created from a desire to merge modern luxury with
+            atmosphere, darkness, restraint, and personal power. Each release
+            is meant to feel deliberate — like a tailored silhouette in scent
+            form.
+          </p>
+        </div>
+
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA / Contact -->
-  <section id="contact" class="section section-elevated">
-    <div class="container cta-panel">
-      <div class="cta-copy">
-        <p class="eyebrow">Stay Connected</p>
-        <h2 class="section-title">Enter the world of VANTARA</h2>
-        <p class="section-text">
-          Receive first access to new releases, exclusive drops, discovery sets,
-          and brand updates from the house.
-        </p>
+    <!-- ============================================================
+         CONTACT — line-input form (LV / Byredo style)
+    ============================================================ -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-grid">
+
+          <div class="contact-copy reveal">
+            <span class="label">Stay Connected</span>
+            <h2 class="section-title">
+              Enter the world<br>of VANTARA
+            </h2>
+            <p>
+              Receive first access to new releases, exclusive drops, discovery
+              sets, and updates from the house.
+            </p>
+          </div>
+
+          <div class="contact-form-wrap reveal" style="transition-delay:120ms">
+            <form class="contact-form" id="newsletterForm" novalidate>
+              {% csrf_token %}
+              <div class="field-line">
+                <label for="id_email" class="sr-only">Email address</label>
+                {{ form.email }}
+              </div>
+              <button type="submit" class="btn btn--filled">Join the List</button>
+            </form>
+            <p class="form-msg" id="formMessage" aria-live="polite"></p>
+          </div>
+
+        </div>
       </div>
+    </section>
 
-      <form class="newsletter-form" id="newsletterForm" novalidate>
-        {% csrf_token %}
-        <label for="id_email" class="sr-only">Email Address</label>
-        {{ form.email }}
-        <button type="submit" class="btn btn-primary">Join the List</button>
-      </form>
+  </main>
 
-      <p class="form-message" id="formMessage" aria-live="polite"></p>
-    </div>
-  </section>
-
-  <!-- Footer -->
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
   <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <a href="#" class="logo footer-logo">VANTARA</a>
-        <p class="footer-text">
-          Modern fragrance shaped by darkness, elegance, and controlled luxury.
-        </p>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">VANTARA</a>
+        <p>Modern fragrance built on presence, emotion, and restraint.</p>
       </div>
-
-      <div class="footer-links">
+      <nav class="footer-nav" aria-label="Footer navigation">
         <a href="#fragrances">Fragrances</a>
         <a href="#collections">Collections</a>
         <a href="#story">Story</a>
         <a href="#contact">Contact</a>
-      </div>
+        <a href="mailto:hello@vantaraparfums.com">hello@vantaraparfums.com</a>
+      </nav>
+      <p class="footer-legal">&copy; 2026 VANTARA Parfums</p>
     </div>
   </footer>
 

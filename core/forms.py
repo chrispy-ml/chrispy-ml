@@ -8,8 +8,7 @@ class SubscriberForm(forms.ModelForm):
         fields = ["email"]
         widgets = {
             "email": forms.EmailInput(attrs={
-                "placeholder": "Enter your email",
-                "class": "input",
+                "placeholder": "Your email address",
                 "autocomplete": "email",
             })
         }
