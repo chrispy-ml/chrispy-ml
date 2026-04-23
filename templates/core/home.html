@@ -63,6 +63,7 @@
         <a href="#philosophy" class="mobile-link">Philosophy</a>
         <a href="#collections" class="mobile-link">Collections</a>
         <a href="#story"       class="mobile-link">Story</a>
+        <a href="#founder"     class="mobile-link">Founder</a>
         <a href="#contact"     class="mobile-link">Contact</a>
       </nav>
       <a href="#contact" class="btn btn--outline mobile-cta">Enter the House</a>
@@ -129,6 +130,11 @@
           {% if featured_fragrances %}
             {% for fragrance in featured_fragrances %}
               <article class="fragrance-item reveal" style="transition-delay:{{ forloop.counter0 }}00ms">
+                {% if fragrance.image %}
+                  <div class="fragrance-img-wrap">
+                    <img src="{{ fragrance.image.url }}" alt="{{ fragrance.name }}" class="fragrance-img" />
+                  </div>
+                {% endif %}
                 <span class="fragrance-num">0{{ forloop.counter }}</span>
                 <span class="fragrance-coll">{{ fragrance.get_collection_display }}</span>
                 <h3 class="fragrance-name">{{ fragrance.name }}</h3>
@@ -289,6 +295,37 @@
         </div>
       </div>
     </section>
+
+    <!-- ============================================================
+         FOUNDER — editorial portrait split
+    ============================================================ -->
+    {% if founder %}
+    <section id="founder" class="section section--dim">
+      <div class="container">
+        <div class="founder-grid">
+
+          <div class="founder-img-wrap reveal">
+            <img
+              src="{{ founder.photo.url }}"
+              alt="{{ founder.name }}"
+              class="founder-img"
+            />
+          </div>
+
+          <div class="founder-copy reveal" style="transition-delay:140ms">
+            <span class="label">The Founder</span>
+            <h2 class="section-title">{{ founder.name }}</h2>
+            <p class="founder-role">{{ founder.title }}</p>
+            <p class="founder-bio">{{ founder.bio_1 }}</p>
+            {% if founder.bio_2 %}
+              <p class="founder-bio">{{ founder.bio_2 }}</p>
+            {% endif %}
+          </div>
+
+        </div>
+      </div>
+    </section>
+    {% endif %}
 
     <!-- ============================================================
          STORY — centered manifesto (Parfums de Marly / Byredo pattern)

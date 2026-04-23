@@ -2,15 +2,17 @@ import json
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
-from .models import Fragrance
+from .models import Fragrance, FounderProfile
 from .forms import SubscriberForm
 
 
 def home(request):
     featured = Fragrance.objects.filter(is_featured=True)[:3]
+    founder = FounderProfile.objects.first()
     form = SubscriberForm()
     return render(request, "core/home.html", {
         "featured_fragrances": featured,
+        "founder": founder,
         "form": form,
     })
 

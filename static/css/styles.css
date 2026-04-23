@@ -499,6 +499,26 @@ img              { display: block; max-width: 100%; }
    FRAGRANCES — editorial border grid (Initio style)
    ============================================================= */
 
+/* Product image — sits above the text block */
+.fragrance-img-wrap {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--deep);
+  margin-bottom: 2.75rem;
+}
+
+.fragrance-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms var(--ease-out);
+}
+
+.fragrance-item:hover .fragrance-img {
+  transform: scale(1.04);
+}
+
 .fragrance-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -873,6 +893,65 @@ img              { display: block; max-width: 100%; }
 }
 
 /* =============================================================
+   FOUNDER — editorial portrait split
+   ============================================================= */
+
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9rem;
+  align-items: center;
+}
+
+.founder-img-wrap {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--deep);
+}
+
+.founder-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 700ms var(--ease-out);
+}
+
+.founder-img-wrap:hover .founder-img {
+  transform: scale(1.03);
+}
+
+.founder-copy .label {
+  margin-bottom: 1.75rem;
+}
+
+.founder-copy .section-title {
+  margin-bottom: 0.5rem;
+}
+
+.founder-role {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ash);
+  margin-bottom: 2.5rem;
+}
+
+.founder-bio {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: var(--ash);
+  line-height: 1.82;
+  max-width: 52ch;
+}
+
+.founder-bio + .founder-bio {
+  margin-top: 1.25rem;
+}
+
+/* =============================================================
    FOOTER
    ============================================================= */
 
@@ -942,7 +1021,10 @@ img              { display: block; max-width: 100%; }
   .section { padding-block: 8rem; }
 
   .philosophy-grid,
-  .contact-grid { grid-template-columns: 1fr; gap: 5rem; }
+  .contact-grid,
+  .founder-grid { grid-template-columns: 1fr; gap: 5rem; }
+
+  .founder-img-wrap { max-width: 480px; }
 
   .story-body { grid-template-columns: 1fr; gap: 1.75rem; }
 

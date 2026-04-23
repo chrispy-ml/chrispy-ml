@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.http import HttpResponse
 import csv
-from .models import Subscriber, Fragrance
+from .models import Subscriber, Fragrance, FounderProfile
 
 
 @admin.register(Subscriber)
@@ -28,3 +28,8 @@ class FragranceAdmin(admin.ModelAdmin):
     list_editable = ["is_featured", "order"]
     list_filter = ["collection", "concentration", "is_featured"]
     search_fields = ["name", "description"]
+
+
+@admin.register(FounderProfile)
+class FounderProfileAdmin(admin.ModelAdmin):
+    list_display = ["name", "title"]
