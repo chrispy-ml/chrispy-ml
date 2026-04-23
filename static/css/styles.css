@@ -4,25 +4,61 @@
    ============================================================= */
 
 :root {
-  /* Palette */
-  --black:      #070707;
-  --deep:       #0c0b0b;
-  --dim:        #111010;
-  --border:     rgba(220, 218, 213, 0.09);
-  --border-md:  rgba(220, 218, 213, 0.18);
+  /* ── Foundation Blacks ─────────────────────────────────────── */
+  --black:        #070708;   /* main bg, footer, negative space  */
+  --soft-black:   #0D0D0F;   /* nav bg, cards                    */
+  --elevated:     #141418;   /* hover panels                     */
 
-  --platinum:   #e3e1db;
-  --silver:     #b8b5ae;
-  --ash:        #7a7771;
+  /* ── Section / Surface Backgrounds ────────────────────────── */
+  --bg-main:      #070708;
+  --bg-section:   #0B0B0D;
+  --bg-alt:       #101015;   /* philosophy, founder, story       */
+  --bg-card:      #111116;   /* product cards, collection cards  */
+  --bg-card-high: #17171D;   /* hover state                      */
 
-  /* Violet used sparingly as a single accent */
-  --violet:     rgba(82, 38, 120, 0.55);
+  /* ── VANTARA Purple System ─────────────────────────────────── */
+  --purple-deep:  #1F102B;   /* subtle gradients, glow shadows   */
+  --purple:       #3B1E52;   /* primary buttons, accents         */
+  --purple-hover: #5A2E78;   /* button hover, interactive        */
+  --violet:       #8B63B4;   /* eyebrow labels, micro accents    */
+  --mist:         #B8A8CC;   /* ambient effects                  */
 
-  /* Typography */
+  /* ── Platinum / Neutral System ────────────────────────────── */
+  --platinum:     #E7E1D8;   /* main headings, logo              */
+  --platinum-2:   #D2CBC1;   /* secondary headings, nav          */
+  --stone:        #AAA295;   /* muted secondary text             */
+  --taupe:        #7F7A74;   /* tertiary text                    */
+
+  /* ── Functional Text ───────────────────────────────────────── */
+  --text-primary:   #F3EEE6; /* important body on dark bg        */
+  --text-body:      #B2ACA3; /* body copy, descriptions          */
+  --text-muted:     #8B857D; /* captions, metadata, labels       */
+
+  /* ── Borders ───────────────────────────────────────────────── */
+  --border:         #232329; /* card borders, separators         */
+  --border-strong:  #31313A; /* active cards, hover outlines     */
+  --border-purple:  #4A2A63; /* interactive accent               */
+
+  /* ── Navigation ────────────────────────────────────────────── */
+  --nav-bg:       rgba(7, 7, 8, 0.82);
+  --mobile-bg:    #0C0C10;
+
+  /* ── Effects ────────────────────────────────────────────────── */
+  --glow-hero:  rgba(90, 46, 120, 0.20);
+  --glow-mist:  rgba(184, 168, 204, 0.10);
+  --overlay-72: rgba(7, 7, 8, 0.72);
+  --overlay-88: rgba(7, 7, 8, 0.88);
+
+  /* ── Status ─────────────────────────────────────────────────── */
+  --success: #8A9B7A;
+  --warning: #B28B5B;
+  --error:   #9C5E66;
+
+  /* ── Typography ─────────────────────────────────────────────── */
   --serif: 'Cormorant Garamond', 'Georgia', serif;
   --sans:  'Inter', system-ui, sans-serif;
 
-  /* Motion */
+  /* ── Motion ─────────────────────────────────────────────────── */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -39,8 +75,8 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--black);
-  color: var(--platinum);
+  background-color: var(--bg-main);
+  color: var(--text-body);
   font-family: var(--sans);
   font-weight: 300;
   font-size: 1rem;
@@ -85,7 +121,7 @@ img              { display: block; max-width: 100%; }
   border: 0;
 }
 
-/* Label — tiny tracked uppercase used throughout */
+/* Label — violet micro accent (eyebrow labels, collection tags) */
 .label {
   display: block;
   font-family: var(--sans);
@@ -93,7 +129,7 @@ img              { display: block; max-width: 100%; }
   font-weight: 500;
   letter-spacing: 0.30em;
   text-transform: uppercase;
-  color: var(--ash);
+  color: var(--violet);
 }
 
 /* Text link — arrow style */
@@ -105,7 +141,7 @@ img              { display: block; max-width: 100%; }
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--silver);
+  color: var(--text-body);
   transition: color 200ms, gap 200ms;
 }
 
@@ -142,7 +178,7 @@ img              { display: block; max-width: 100%; }
 }
 
 .section--dim {
-  background-color: var(--dim);
+  background-color: var(--bg-alt);
 }
 
 .section--centered {
@@ -170,7 +206,7 @@ img              { display: block; max-width: 100%; }
 .section-lead {
   font-size: 0.9375rem;
   font-weight: 300;
-  color: var(--ash);
+  color: var(--text-muted);
   max-width: 54ch;
   line-height: 1.75;
 }
@@ -189,30 +225,34 @@ img              { display: block; max-width: 100%; }
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  transition: background 200ms, color 200ms, border-color 200ms;
+  transition: background 220ms, color 220ms, border-color 220ms, box-shadow 220ms;
   white-space: nowrap;
 }
 
+/* Primary — VANTARA purple */
 .btn--filled {
-  background: var(--platinum);
-  color: var(--black);
-  border: 1px solid var(--platinum);
+  background: var(--purple);
+  color: #F7F3EC;
+  border: 1px solid var(--purple);
 }
 
 .btn--filled:hover {
-  background: #fff;
-  border-color: #fff;
+  background: var(--purple-hover);
+  border-color: var(--purple-hover);
+  box-shadow: 0 0 28px rgba(90, 46, 120, 0.28);
 }
 
+/* Secondary — restrained outline */
 .btn--outline {
   background: transparent;
-  color: var(--silver);
-  border: 1px solid var(--border-md);
+  color: var(--platinum-2);
+  border: 1px solid #3A3540;
 }
 
 .btn--outline:hover {
-  color: var(--platinum);
-  border-color: rgba(220, 218, 213, 0.40);
+  background: #18141F;
+  border-color: var(--purple-hover);
+  color: var(--text-primary);
 }
 
 /* =============================================================
@@ -231,7 +271,7 @@ img              { display: block; max-width: 100%; }
 }
 
 .header.is-scrolled {
-  background: rgba(7, 7, 7, 0.93);
+  background: var(--nav-bg);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-bottom-color: var(--border);
@@ -274,7 +314,7 @@ img              { display: block; max-width: 100%; }
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--ash);
+  color: var(--text-body);
   transition: color 200ms;
 }
 
@@ -297,12 +337,15 @@ img              { display: block; max-width: 100%; }
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--platinum);
-  border: 1px solid var(--border-md);
+  border: 1px solid #3A3540;
   padding: 0.65rem 1.25rem;
-  transition: border-color 200ms;
+  transition: border-color 200ms, color 200ms;
 }
 
-.header-cta:hover { border-color: rgba(220, 218, 213, 0.40); }
+.header-cta:hover {
+  border-color: var(--purple-hover);
+  color: var(--text-primary);
+}
 
 /* Hamburger */
 .burger {
@@ -332,7 +375,7 @@ img              { display: block; max-width: 100%; }
   position: fixed;
   inset: 0;
   z-index: 190;
-  background: var(--black);
+  background: var(--mobile-bg);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -364,7 +407,7 @@ img              { display: block; max-width: 100%; }
 }
 
 .mobile-link:last-child { border-bottom: none; }
-.mobile-link:hover { color: var(--ash); }
+.mobile-link:hover { color: var(--text-muted); }
 
 .mobile-cta {
   margin-top: 3rem;
@@ -386,7 +429,7 @@ img              { display: block; max-width: 100%; }
   overflow: hidden;
 }
 
-/* Subtle violet ambient glow — only here */
+/* Brand glow — the only prominent purple atmosphere */
 .hero::before {
   content: '';
   position: absolute;
@@ -395,11 +438,7 @@ img              { display: block; max-width: 100%; }
   transform: translate(-50%, -50%);
   width: 700px;
   height: 700px;
-  background: radial-gradient(
-    circle,
-    rgba(82, 38, 120, 0.09) 0%,
-    transparent 68%
-  );
+  background: radial-gradient(circle, var(--glow-hero) 0%, transparent 68%);
   pointer-events: none;
 }
 
@@ -422,7 +461,7 @@ img              { display: block; max-width: 100%; }
   display: block;
   width: 52px;
   height: 1px;
-  background: var(--border-md);
+  background: var(--border-strong);
 }
 
 .eyebrow-text {
@@ -430,10 +469,10 @@ img              { display: block; max-width: 100%; }
   font-weight: 500;
   letter-spacing: 0.30em;
   text-transform: uppercase;
-  color: var(--ash);
+  color: var(--text-muted);
 }
 
-/* Main headline — the defining typographic moment */
+/* Main headline */
 .hero-title {
   font-family: var(--serif);
   font-size: clamp(4rem, 9.5vw, 9rem);
@@ -447,7 +486,7 @@ img              { display: block; max-width: 100%; }
 .hero-sub {
   font-size: 0.9375rem;
   font-weight: 300;
-  color: var(--ash);
+  color: var(--text-muted);
   line-height: 1.78;
   max-width: 58ch;
   margin-inline: auto;
@@ -478,7 +517,7 @@ img              { display: block; max-width: 100%; }
   font-size: 0.55rem;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--ash);
+  color: var(--text-muted);
   opacity: 0.7;
 }
 
@@ -486,7 +525,7 @@ img              { display: block; max-width: 100%; }
   display: block;
   width: 1px;
   height: 52px;
-  background: linear-gradient(to bottom, transparent, var(--ash));
+  background: linear-gradient(to bottom, transparent, var(--text-muted));
   animation: scrollPulse 2.8s ease-in-out infinite;
 }
 
@@ -499,12 +538,12 @@ img              { display: block; max-width: 100%; }
    FRAGRANCES — editorial border grid (Initio style)
    ============================================================= */
 
-/* Product image — sits above the text block */
+/* Product image */
 .fragrance-img-wrap {
   width: 100%;
   aspect-ratio: 3 / 4;
   overflow: hidden;
-  background: var(--deep);
+  background: var(--bg-card);
   margin-bottom: 2.75rem;
 }
 
@@ -536,7 +575,7 @@ img              { display: block; max-width: 100%; }
 }
 
 .fragrance-item:hover {
-  background: rgba(255, 255, 255, 0.018);
+  background: var(--bg-card);
 }
 
 .fragrance-num {
@@ -544,7 +583,7 @@ img              { display: block; max-width: 100%; }
   font-family: var(--serif);
   font-size: 0.875rem;
   font-weight: 400;
-  color: var(--ash);
+  color: var(--text-muted);
   letter-spacing: 0.08em;
   margin-bottom: 2.5rem;
 }
@@ -555,7 +594,7 @@ img              { display: block; max-width: 100%; }
   font-weight: 500;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--ash);
+  color: var(--violet);
   margin-bottom: 0.85rem;
 }
 
@@ -571,7 +610,7 @@ img              { display: block; max-width: 100%; }
 .fragrance-desc {
   font-size: 0.9rem;
   font-weight: 300;
-  color: var(--ash);
+  color: var(--text-body);
   line-height: 1.72;
   margin-bottom: 1.75rem;
   flex: 1;
@@ -588,13 +627,13 @@ img              { display: block; max-width: 100%; }
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--ash);
+  color: var(--text-muted);
 }
 
 .fragrance-tags span + span::before {
   content: '·';
   padding-inline: 0.65rem;
-  color: var(--border-md);
+  color: var(--border-strong);
 }
 
 /* =============================================================
@@ -620,7 +659,7 @@ img              { display: block; max-width: 100%; }
   line-height: 1.22;
   letter-spacing: -0.01em;
   color: var(--platinum);
-  border-left: 1px solid var(--violet);
+  border-left: 1px solid var(--border-purple);
   padding-left: 2rem;
   margin-bottom: 2rem;
 }
@@ -632,14 +671,14 @@ img              { display: block; max-width: 100%; }
   font-style: normal;
   letter-spacing: 0.20em;
   text-transform: uppercase;
-  color: var(--ash);
+  color: var(--text-muted);
   padding-left: 2rem;
 }
 
 .philo-body {
   font-size: 0.9375rem;
   font-weight: 300;
-  color: var(--ash);
+  color: var(--text-body);
   line-height: 1.80;
   max-width: 52ch;
 }
@@ -666,11 +705,7 @@ img              { display: block; max-width: 100%; }
   display: block;
   width: 1px;
   align-self: stretch;
-  background: linear-gradient(
-    to bottom,
-    rgba(82, 38, 120, 0.75),
-    rgba(220, 218, 213, 0.12)
-  );
+  background: linear-gradient(to bottom, var(--purple-hover), var(--border));
 }
 
 .pillar h4 {
@@ -685,7 +720,7 @@ img              { display: block; max-width: 100%; }
 .pillar p {
   font-size: 0.875rem;
   font-weight: 300;
-  color: var(--ash);
+  color: var(--text-body);
   line-height: 1.68;
 }
 
@@ -704,22 +739,18 @@ img              { display: block; max-width: 100%; }
   position: relative;
   overflow: hidden;
   border: 1px solid var(--border);
-  background: var(--deep);
+  background: var(--bg-card);
   display: flex;
   align-items: flex-end;
   min-height: 280px;
-  transition: border-color 350ms;
+  transition: border-color 350ms, background 350ms;
 }
 
 .coll-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    155deg,
-    rgba(82, 38, 120, 0.10) 0%,
-    transparent 55%
-  );
+  background: linear-gradient(155deg, rgba(31, 16, 43, 0.70) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -728,11 +759,14 @@ img              { display: block; max-width: 100%; }
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 55%;
-  background: linear-gradient(to top, rgba(7, 7, 7, 0.75), transparent);
+  background: linear-gradient(to top, var(--overlay-88), transparent);
   pointer-events: none;
 }
 
-.coll-card:hover { border-color: var(--border-md); }
+.coll-card:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-card-high);
+}
 
 .coll-card--large {
   grid-row: 1 / 3;
@@ -740,11 +774,7 @@ img              { display: block; max-width: 100%; }
 }
 
 .coll-card--large::before {
-  background: linear-gradient(
-    160deg,
-    rgba(82, 38, 120, 0.18) 0%,
-    transparent 60%
-  );
+  background: linear-gradient(160deg, rgba(31, 16, 43, 0.80) 0%, transparent 65%);
 }
 
 .coll-card-body {
@@ -770,7 +800,7 @@ img              { display: block; max-width: 100%; }
 .coll-card-body p {
   font-size: 0.875rem;
   font-weight: 300;
-  color: var(--silver);
+  color: var(--platinum-2);
   line-height: 1.65;
   max-width: 32ch;
   margin-bottom: 1.5rem;
@@ -808,7 +838,7 @@ img              { display: block; max-width: 100%; }
   font-style: normal;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--ash);
+  color: var(--text-muted);
   margin-bottom: 5rem;
 }
 
@@ -824,7 +854,7 @@ img              { display: block; max-width: 100%; }
 .story-body p {
   font-size: 0.9375rem;
   font-weight: 300;
-  color: var(--ash);
+  color: var(--text-body);
   line-height: 1.82;
 }
 
@@ -839,13 +869,13 @@ img              { display: block; max-width: 100%; }
   align-items: center;
 }
 
-.contact-copy .label    { margin-bottom: 1.75rem; }
+.contact-copy .label         { margin-bottom: 1.75rem; }
 .contact-copy .section-title { margin-bottom: 1.25rem; }
 
 .contact-copy p {
   font-size: 0.9375rem;
   font-weight: 300;
-  color: var(--ash);
+  color: var(--text-body);
   line-height: 1.78;
   max-width: 44ch;
 }
@@ -855,15 +885,16 @@ img              { display: block; max-width: 100%; }
   flex-direction: column;
 }
 
-/* Bottom-border-only input — luxury standard */
+/* Line-input — bottom border only, luxury standard */
 .field-line {
-  border-bottom: 1px solid var(--border-md);
+  border-bottom: 1px solid #2B2B34;
   margin-bottom: 3rem;
-  transition: border-color 250ms;
+  transition: border-color 250ms, box-shadow 250ms;
 }
 
 .field-line:focus-within {
-  border-bottom-color: var(--silver);
+  border-bottom-color: #6B4690;
+  box-shadow: 0 1px 0 #6B4690, 0 3px 12px rgba(107, 70, 144, 0.18);
 }
 
 .field-line input[type="email"] {
@@ -876,11 +907,11 @@ img              { display: block; max-width: 100%; }
   font-family: var(--sans);
   font-weight: 300;
   font-size: 0.9375rem;
-  color: var(--platinum);
+  color: var(--text-primary);
 }
 
 .field-line input[type="email"]::placeholder {
-  color: var(--ash);
+  color: var(--text-muted);
 }
 
 .form-msg {
@@ -888,7 +919,7 @@ img              { display: block; max-width: 100%; }
   font-size: 0.75rem;
   font-weight: 300;
   letter-spacing: 0.06em;
-  color: var(--ash);
+  color: var(--text-muted);
   min-height: 1.2em;
 }
 
@@ -907,7 +938,7 @@ img              { display: block; max-width: 100%; }
   position: relative;
   aspect-ratio: 3 / 4;
   overflow: hidden;
-  background: var(--deep);
+  background: var(--bg-card);
 }
 
 .founder-img {
@@ -935,14 +966,14 @@ img              { display: block; max-width: 100%; }
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--ash);
+  color: var(--text-muted);
   margin-bottom: 2.5rem;
 }
 
 .founder-bio {
   font-size: 0.9375rem;
   font-weight: 300;
-  color: var(--ash);
+  color: var(--text-body);
   line-height: 1.82;
   max-width: 52ch;
 }
@@ -958,6 +989,7 @@ img              { display: block; max-width: 100%; }
 .footer {
   padding-block: 4.5rem;
   border-top: 1px solid var(--border);
+  background: var(--bg-main);
 }
 
 .footer-inner {
@@ -975,7 +1007,7 @@ img              { display: block; max-width: 100%; }
 .footer-brand p {
   font-size: 0.8rem;
   font-weight: 300;
-  color: var(--ash);
+  color: var(--text-muted);
   max-width: 36ch;
   line-height: 1.65;
 }
@@ -992,7 +1024,7 @@ img              { display: block; max-width: 100%; }
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ash);
+  color: var(--text-muted);
   transition: color 200ms;
 }
 
@@ -1003,7 +1035,7 @@ img              { display: block; max-width: 100%; }
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ash);
+  color: var(--text-muted);
   text-align: right;
   opacity: 0.55;
 }
